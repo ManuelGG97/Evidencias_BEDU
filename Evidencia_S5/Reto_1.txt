@@ -1,0 +1,27 @@
+PREGUNTA 1
+{
+ filter: {
+  house_rules: RegExp('no parties', i)
+ }
+}
+
+PREGUNUTA 2
+{
+ filter: {
+  house_rules: RegExp('pets allowed', i)
+ }
+}
+
+PREGUNTA 3
+{
+ filter: {
+  house_rules: RegExp('no smoking', i)
+ }
+}
+
+PREGUNTA 4
+{
+ filter: {
+  house_rules: RegExp('no parties | no smoking', i)
+ }
+}
