@@ -1,0 +1,92 @@
+EJERCICIO 1
+{
+ project: {
+  _id: 0,
+  name: 1,
+  email_address: 1,
+  phone_number: 1
+ }
+}
+
+EJERCICIO 3
+{
+ filter: {
+  founded_month: 10
+ },
+ project: {
+  _id: 0,
+  name: 1
+ }
+}
+
+EJERCICIO 4
+{
+ filter: {
+  founded_year: 2008
+ },
+ project: {
+  _id: 0,
+  name: 1
+ }
+}
+
+EJERCICIO 5
+{
+ filter: {
+  author: 'machine'
+ },
+ project: {
+  _id: 0,
+  body: 1
+ }
+}
+EJERCICIO 7
+{
+ filter: {
+  founded_year: 2008,
+  founded_month: 10
+ },
+ project: {
+  _id: 0,
+  name: 1
+ }
+}
+
+EJERCICIO 8
+{
+ filter: {
+  number_of_employees: {
+   $gt: 50
+  }
+ },
+ project: {
+  _id: 0,
+  name: 1
+ }
+}
+
+EJERCICIO 10
+{
+ project: {
+  _id: 0,
+  name: 1,
+  number_of_employees: 1
+ },
+ sort: {
+  number_of_employees: 1
+ },
+ limit: 1
+}
+
+EJERCICIO 11
+{
+ project: {
+  _id: 0,
+  name: 1,
+  number_of_employees: 1
+ },
+ sort: {
+  number_of_employees: -1
+ },
+ limit: 1
+}
