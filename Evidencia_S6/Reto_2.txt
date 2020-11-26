@@ -1,0 +1,29 @@
+[
+    {
+        '$lookup': {
+            'from': 'users', 
+            'localField': 'name', 
+            'foreignField': 'name', 
+            'as': 'usuario'
+        }
+    }, {
+        '$addFields': {
+            'usuario_objeto': {
+                '$arrayElemAt': [
+                    '$usuario', 0
+                ]
+            }
+        }
+    }, {
+        '$addFields': {
+            'usuario_password': '$usuario_objeto.password'
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'name': 1, 
+            'email': 1, 
+            'usuario_password': 1
+        }
+    }
+]

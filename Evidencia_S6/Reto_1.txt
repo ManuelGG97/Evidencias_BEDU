@@ -1,0 +1,43 @@
+[
+    {
+        '$match': {
+            'property_type': 'House', 
+            'bedrooms': {
+                '$gte': 1
+            }
+        }
+    }, {
+        '$addFields': {
+            'costo_recamara': {
+                '$divide': [
+                    '$price', '$bedrooms'
+                ]
+            }
+        }
+    }, {
+        '$group': {
+            '_id': '$address.country', 
+            'recamaras': {
+                '$sum': 1
+            }, 
+            'total': {
+                '$sum': '$costo_recamara'
+            }
+        }
+    }, {
+        '$addFields': {
+            'pais': '$_id', 
+            'costo_promedio': {
+                '$divide': [
+                    '$total', '$recamaras'
+                ]
+            }
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'pais': 1, 
+            'costo_promedio': 1
+        }
+    }
+]
